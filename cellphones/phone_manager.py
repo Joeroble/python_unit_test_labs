@@ -74,14 +74,17 @@ class PhoneAssignments():
                 phone_located = phone
                 if phone_located.employee_id is not None and phone.employee_id is not employee.id:
                     raise PhoneError ('Phone already assigned to an employee')
-            if  phone_located.employee_id == employee.id:
-                    raise PhoneError('Employee already has a phone')
-                elif :
-                    return
-
-            elif phone.id == phone_id:
-                 phone.assign(employee.id)
-                 return
+        for phone in self.phones:
+            if phone.employee_id == employee.id:
+                raise PhoneError('Employee already has a phone')
+                
+        for phone in self.phones:
+            if phone.id == phone_id and phone.employee_id == employee.id:
+                return
+        for phone in self.phones:
+           if phone.id == phone_id:
+                phone.assign(employee.id)
+                return
 
 
     def un_assign(self, phone_id):
