@@ -71,10 +71,10 @@ class PhoneAssignments():
         # TODO if employee already has this phone, don't make any changes. This should NOT raise an exception.
         for phone in self.phones:
             if phone.id == phone_id:
-
-                if phone.employee_id is not None and phone.employee_id is not employee.id:
+                phone_located = phone
+                if phone_located.employee_id is not None and phone.employee_id is not employee.id:
                     raise PhoneError ('Phone already assigned to an employee')
-                elif  phone.employee_id == employee.id:
+            if  phone_located.employee_id == employee.id:
                     raise PhoneError('Employee already has a phone')
                 elif :
                     return
