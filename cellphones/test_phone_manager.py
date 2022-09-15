@@ -112,6 +112,7 @@ class TestPhoneManager(unittest.TestCase):
         testAssignmentMgr.add_employee(testEmployee)
         testAssignmentMgr.assign(1, testEmployee)
         testAssignmentMgr.assign(1, testEmployee)
+        # TODO assertion does - employee still have the original phone? 
 
 
 
